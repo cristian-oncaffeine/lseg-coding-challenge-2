@@ -1,5 +1,4 @@
 package com.lseg.predict3;
-import com.lseg.predict3.fileIO.DirectoryAdapter;
 import com.lseg.predict3.services.AppServices;
 
 public class Main {
@@ -15,6 +14,10 @@ public class Main {
         }
         try {
             int filesToSamplePerSE = Integer.parseInt(args[0]);
+            if(filesToSamplePerSE < 1 || filesToSamplePerSE > 2) {
+                System.out.println("Invalid parameter value, should be 1 or 2");
+                return;
+            }
             AppServices.processData(rootDataDirectory, rootOutputDirectory, filesToSamplePerSE);
         } catch (NumberFormatException ex) {
             // there was a problem with the argument to main (number of files to process)
