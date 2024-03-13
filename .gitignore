@@ -25,3 +25,9 @@ replay_pid*
 
 # Output files
 Predict3/output_files/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
